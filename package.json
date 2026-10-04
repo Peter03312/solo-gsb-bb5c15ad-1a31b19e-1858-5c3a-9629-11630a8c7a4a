@@ -1,0 +1,16 @@
+{
+  "name": "orienteering-review",
+  "version": "1.0.0",
+  "private": true,
+  "description": "定向越野打卡争议复核系统",
+  "type": "module",
+  "scripts": {
+    "dev:server": "node --watch server/index.js",
+    "dev:web": "npm --prefix web run dev",
+    "build:web": "npm --prefix web run build",
+    "start": "node server/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

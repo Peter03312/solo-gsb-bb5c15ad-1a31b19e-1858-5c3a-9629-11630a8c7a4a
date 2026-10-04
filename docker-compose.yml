@@ -1,0 +1,17 @@
+services:
+  orienteering:
+    build: .
+    image: orienteering-review:latest
+    container_name: orienteering-review
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      DB_PATH: /app/data/orienteering.sqlite
+      SEED_DEMO: "1"            # 首次启动写入演示赛事；改为 0 则只建空库
+    volumes:
+      - orienteering-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  orienteering-data:
